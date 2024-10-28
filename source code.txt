@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        int[] secuencia = {3, 8, 12, 16, 21};
+        int ultimoNumero = secuencia[secuencia.length - 1];  
+        int nuevosNumeros = 5;  
+        int contador = 0;  
+
+        
+        System.out.println("Secuencia inicial:");
+        for (int num : secuencia) {
+            System.out.print(num + " ");
+        }
+
+        
+        System.out.println("\n\nGenerando los siguientes números:");
+        while (contador < nuevosNumeros) {
+            if (contador % 2 == 0) {
+                ultimoNumero += 5;  
+            } else {
+                ultimoNumero += 4;  
+            }
+            System.out.println(ultimoNumero);  
+            contador++;
+        }
+    }
+}

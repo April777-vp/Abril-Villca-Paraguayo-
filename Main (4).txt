@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] ficha = new int[20];
+        int puntos = 0;
+
+        
+        System.out.println("Introduce los 20 números de la ficha:");
+        for (int i = 0; i < 20; i++) {
+            ficha[i] = scanner.nextInt();
+        }
+
+        
+        for (int numero : ficha) {
+            
+            if (esPrimo(numero)) {
+                puntos += 4;
+            }
+
+           
+            if (numero % 2 == 0) {
+                puntos += 1;
+            }
+
+            
+            if (numero % 7 == 0) {
+                puntos += 2;
+            }
+        }
+
+        
+        if (puntos > 70) {
+            System.out.println("¡Ficha ganadora con " + puntos + " puntos!");
+        } else {
+            System.out.println("Ficha no ganadora. Total de puntos: " + puntos);
+        }
+
+        scanner.close();
+    }
+
+    
+    public static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}

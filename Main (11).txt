@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        final int costoBicicleta = 1200; 
+        int ahorroActual = 250; 
+        int ahorroSemanal = 25; 
+
+    
+        int cantidadRestante = costoBicicleta - ahorroActual;
+ 
+        int semanasNecesarias = 0;
+
+        if (cantidadRestante > 0) {
+            semanasNecesarias = (int) Math.ceil((double) cantidadRestante / ahorroSemanal);
+        }
+
+        
+        System.out.println("María necesita ahorrar durante " + semanasNecesarias + " semanas para comprar la bicicleta.");
+    }
+}

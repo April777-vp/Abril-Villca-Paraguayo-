@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese un número: ");
+        int n = scanner.nextInt();
+
+    
+        if (n > 0) {
+            if (n % 3 == 0) {
+                if (n % 100 != 0 || n % 300 == 0) {
+                    System.out.println("El número " + n + " es especial.");
+                } else {
+                    System.out.println("El número " + n + " no es especial.");
+                }
+            } else {
+                System.out.println("El número " + n + " no es especial.");
+            }
+        } else {
+            System.out.println("El número " + n + " no es especial.");
+        }
+
+        scanner.close();
+    }
+}
